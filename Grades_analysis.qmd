@@ -57,6 +57,43 @@ ggplot(grades_without_na, aes(x = Exam)) + geom_histogram(binwidth = 0.7, fill="
 ## Question 5
 
 ```{r}
+student_by_grp <- grades %>% 
+  group_by(Group) %>%
+  summarise(n())
+print(student_by_grp)
+  
+```
 
+## Question 6
+
+```{r}
+ggplot(grades, aes(x = Group, fill= Group)) + geom_bar() 
+```
+
+## Question 7
+
+```{r}
+ggplot(grades_without_na, aes(x = Group, y = Exam, fill = Group)) + geom_boxplot()
+```
+## Question 8
+
+```{r}
+missed_exam <- grades %>%
+  group_by(Group) %>%
+  summarise(Missed_Exam = sum(is.na(Exam)))
+
+missed_exam <- table(grades$Group, is.na(grades$Exam))
+
+missed_exam <- as.data.frame(missed_exam)
+colnames(missed_exam) <- c("Group", "Missed_Exam")
+
+missed_exam
+```
+
+## Question 9
+
+```{r}
+ggplot(missed_exam, aes(x = Group, y = Missed_Exam)) +
+  geom_col() 
 ```
 
