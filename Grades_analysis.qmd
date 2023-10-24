@@ -46,8 +46,17 @@ the number of students who have not pass the Exam is `r NA_exam`.
 ## Question 4
 
 ```{r}
-grades %>%
+grades_without_na<-grades %>%
+  filter(!is.na(Exam))
+print(grades_without_na)
   
-ggplot(data_exam, aes(x = Exam)) + geom_histogram()
+ggplot(grades_without_na, aes(x = Exam)) + geom_histogram(binwidth = 0.7, fill="darkorange")
+
+```
+
+## Question 5
+
+```{r}
+
 ```
 
