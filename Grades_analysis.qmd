@@ -42,3 +42,12 @@ NA_exam <- grades %>%
 print(NA_exam)
 ```
 the number of students who have not pass the Exam is `r NA_exam`.
+
+## Question 4
+
+```{r}
+grades %>%
+  
+ggplot(data_exam, aes(x = Exam)) + geom_histogram()
+```
+
