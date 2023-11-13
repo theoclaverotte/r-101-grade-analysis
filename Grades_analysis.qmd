@@ -100,3 +100,14 @@ colnames(missed_exam_2) <- c("Group", "Missed_Exam")
 ggplot(missed_exam, aes(x = Group, y = Missed_Exam)) +
   geom_col() 
 ```
+
+## Question 10 
+```{r}
+df_long_format_grades <- grades %>%
+  pivot_longer(
+    cols = -c(Id, Group), names_to = "name", values_to = "value"
+  )
+
+df_long_format_grades
+```
+
