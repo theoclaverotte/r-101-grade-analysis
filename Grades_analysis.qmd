@@ -2,7 +2,9 @@
 title: "Grades analysis"
 author: "Théo Claverotte dit Laprima"
 format: html
-
+echo: false
+message: false
+warning: false
 ---
 
 ```{r}
@@ -11,18 +13,17 @@ library(tidyr)
 library(ggplot2)
 library(here)
 library(vroom)
+library(stringr)
 here::i_am("r-101-grade-analysis.Rproj")
 ```
 
-
 ## Question 1
+
 ```{r}
 grades<-vroom(here("grades.csv"))
 grades |> summarise(anyNA(Exam))
 is.na(c(1, 2, NA, 4, NA))
 ```
-
-
 
 ## Question 2
 
@@ -41,6 +42,7 @@ NA_exam <- grades %>%
   count(is.na(Exam)) 
 print(NA_exam)
 ```
+
 the number of students who have not pass the Exam is `r NA_exam`.
 
 ## Question 4
@@ -67,6 +69,7 @@ print(student_by_grp)
 ## Question 6
 
 ```{r}
+
 ggplot(grades, aes(x = Group, fill= Group)) + geom_bar() 
 ```
 
@@ -75,6 +78,7 @@ ggplot(grades, aes(x = Group, fill= Group)) + geom_bar()
 ```{r}
 ggplot(grades_without_na, aes(x = Group, y = Exam, fill = Group)) + geom_boxplot()
 ```
+
 ## Question 8
 
 ```{r}
@@ -82,12 +86,12 @@ missed_exam <- grades %>%
   group_by(Group) %>%
   summarise(Missed_Exam = sum(is.na(Exam)))
 
-missed_exam <- table(grades$Group, is.na(grades$Exam))
+missed_exam_2 <- table(grades$Group, is.na(grades$Exam))
 
-missed_exam <- as.data.frame(missed_exam)
-colnames(missed_exam) <- c("Group", "Missed_Exam")
+missed_exam_2 <- as.data.frame(missed_exam)
+colnames(missed_exam_2) <- c("Group", "Missed_Exam")
 
-missed_exam
+
 ```
 
 ## Question 9
@@ -96,4 +100,3 @@ missed_exam
 ggplot(missed_exam, aes(x = Group, y = Missed_Exam)) +
   geom_col() 
 ```
-
