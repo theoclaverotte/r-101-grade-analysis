@@ -91,6 +91,7 @@ missed_exam_2 <- table(grades$Group, is.na(grades$Exam))
 missed_exam_2 <- as.data.frame(missed_exam)
 colnames(missed_exam_2) <- c("Group", "Missed_Exam")
 
+knitr::kable(missed_exam)
 
 ```
 
@@ -127,4 +128,17 @@ ggplot(missing_grades_by_student, aes(x = missing_grades_by_student)) +
   labs(title = "Distribution of Total Missing Grades per Student", x = "Number of Missing Grades", y = "Frequency")
 ```
 
+## Question 13 
 
+```{r}
+missing_student <- df_long_format_grades %>%
+  filter(name== "Exam") %>%
+  group_by(Group) %>%
+  summarise(missing_student = sum(is.na(value)))
+
+
+knitr::kable(missing_student)
+
+```
+
+## Question 14
