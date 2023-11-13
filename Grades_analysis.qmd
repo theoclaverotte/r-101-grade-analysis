@@ -150,8 +150,24 @@ online_exam_na <- df_long_format_grades %>%
 online_exam_na
 ```
 
-#Question 15
+## Question 15
+
+
 ```{r}
 
+grades_na<-grades|>
+  rowwise()|>
+  mutate(NA_count=sum(is.na(c_across(starts_with("Online")))))
+  
+grades_by_na_online<-grades_na %>%
+  group_by(NA_count) %>%
+  summarise(mean=mean(Exam,na.rm=TRUE))
+
+ggplot(grades_NA_res,aes(x=NA_count,y=mean))+
+  geom_col()+
+  labs(title="the distribution of the grades at the Exam conditioned by the number of missing grades for the online tests",
+       x="online tests missed",
+       y="Grades out of 20")
+  
 ```
 
