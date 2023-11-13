@@ -186,9 +186,26 @@ missed_any_grade
 percentage_missed_per_group <- missed_any_grade %>%
   inner_join(df_long_format_grades, by = "Id") %>%
   group_by(Group) %>%
-  summarise(percetage_missed_by_group = mean(Missed)*100)
+  summarise(P_missed = mean(Missed)*100)
 
 percentage_missed_per_group
 
 ```
+
+## Question 18
+
+```{r}
+mean_by_group<-grades|>
+  group_by(Group)|>
+  summarise(mean=mean(Exam,na.rm=TRUE))
+
+Exam_missed_and_mean<-inner_join(percentage_missed_per_group,mean_by_group,by="Group") %>%
+  ggplot(aes(x=P_missed,y=mean,fill=Group))+
+  geom_hex()+
+  labs(title="Every group's average grade at the Exam according to the percentage of missed MCQ gradse",
+       x="Percentage of students who missed at least one MCQ",
+       y="Average grade to the final exam")
+Exam_missed_and_mean
+```
+
 
