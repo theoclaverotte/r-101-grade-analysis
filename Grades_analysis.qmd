@@ -163,11 +163,19 @@ grades_by_na_online<-grades_na %>%
   group_by(NA_count) %>%
   summarise(mean=mean(Exam,na.rm=TRUE))
 
-ggplot(grades_NA_res,aes(x=NA_count,y=mean))+
+ggplot(grades_by_na_online,aes(x=NA_count,y=mean), )+
   geom_col()+
   labs(title="the distribution of the grades at the Exam conditioned by the number of missing grades for the online tests",
        x="online tests missed",
        y="Grades out of 20")
   
+```
+## Question 16
+```{r}
+missed_any_grade <- df_long_format_grades %>%
+  filter(str_starts(name, "MCQ")) %>%
+  group_by(Id) %>%
+  summarise(Missed = any(is.na(value)))
+missed_any_grade
 ```
 
