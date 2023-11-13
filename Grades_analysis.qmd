@@ -123,6 +123,8 @@ missing_grades_by_student
 ## Question 12
 ```{r}
 ggplot(missing_grades_by_student, aes(x = missing_grades_by_student)) +
-  geom_histogram() 
+  geom_histogram(binwidth = 1, fill = "lightgreen", color = "black") +
+  labs(title = "Distribution of Total Missing Grades per Student", x = "Number of Missing Grades", y = "Frequency")
 ```
+
 
