@@ -142,3 +142,12 @@ knitr::kable(missing_student)
 ```
 
 ## Question 14
+```{r}
+online_exam_na <- df_long_format_grades %>%
+  filter(str_starts(name, "Online_MCQ")) %>%
+  group_by(Id) %>%
+  summarise(online_exam_na = sum(is.na(value)))
+online_exam_na
+```
+
+#Question 15
