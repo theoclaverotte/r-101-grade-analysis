@@ -111,3 +111,18 @@ df_long_format_grades <- grades %>%
 df_long_format_grades
 ```
 
+## Question 11
+```{r}
+missing_grades_by_student <- df_long_format_grades %>%
+  group_by(Id) %>%
+  summarise(missing_grades_by_student = sum(is.na(value)))
+
+missing_grades_by_student
+```
+
+## Question 12
+```{r}
+ggplot(missing_grades_by_student, aes(x = missing_grades_by_student)) +
+  geom_histogram() 
+```
+
