@@ -130,32 +130,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 669 × 32
-      Id Group   Exam MCQ_1 MCQ_2 MCQ_3 MCQ_4 MCQ_5 MCQ_6 MCQ_7 MCQ_8 MCQ_9
-   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1   561 grp_16    10 15    18.5  12.7   8.24 13.8     20 20    20     20  
- 2   321 grp_22     6 NA    10.8   2.73  5.88  4.62    12  6.67  0      2.5
- 3   153 grp_24     9  6.67 13.8   9.09  9.41 13.8     16  6.67  6.47   5  
- 4    74 grp_7      6 11.7  16.9  18.2  11.8  12.3     16 11.1  10.6    5  
- 5   228 grp_4      4  6.67  6.15 12.7   1.18  1.54    16  8.89 10.6    5  
- 6   146 grp_20    10  3.33 16.9  18.2   5.88 20       20 11.1  12.9   15  
- 7   634 grp_11     8  8.33 15.4  10.9   9.41 10.8     20  8.89  8.24   7.5
- 8    49 grp_14     8 11.7  10.8  18.2  14.1  10.8     16  8.89 10.6    5  
- 9   128 grp_13    10  3.33 13.8   7.27 15.3  15.4     20  7.78 20     17.5
-10   303 grp_22     8 11.7   7.69 18.2   4.71  7.69     4 15.6  20      7.5
-# ℹ 659 more rows
-# ℹ 20 more variables: MCQ_10 &lt;dbl&gt;, Online_MCQ_1 &lt;dbl&gt;, Online_MCQ_2 &lt;dbl&gt;,
-#   Online_MCQ_3 &lt;dbl&gt;, Online_MCQ_4 &lt;dbl&gt;, Online_MCQ_5 &lt;dbl&gt;,
-#   Online_MCQ_6 &lt;dbl&gt;, Online_MCQ_7 &lt;dbl&gt;, Online_MCQ_8 &lt;dbl&gt;,
-#   Online_MCQ_9 &lt;dbl&gt;, Online_MCQ_10 &lt;dbl&gt;, Online_MCQ_11 &lt;dbl&gt;,
-#   Online_MCQ_12 &lt;dbl&gt;, Online_MCQ_13 &lt;dbl&gt;, Online_MCQ_14 &lt;dbl&gt;,
-#   Online_MCQ_15 &lt;dbl&gt;, Online_MCQ_16 &lt;dbl&gt;, Online_MCQ_17 &lt;dbl&gt;, …</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="Grades_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>WE can see that we have a concentration of student in the lower grades out of 20.</p>
 </section>
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
@@ -185,6 +164,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="Grades_analysis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>The students are divided more or less equally between the groups. Some groups are over 30, while others are just over 20. We don’t have any big differences between groups.</p>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
@@ -193,25 +173,118 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="Grades_analysis_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>We can see that not all groups have the same averages. Group 21 is clearly ahead of the other groups.</p>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 24 × 2
-   Group  Missed_Exam
-   &lt;chr&gt;        &lt;int&gt;
- 1 grp_1            3
- 2 grp_10           7
- 3 grp_11           6
- 4 grp_12           1
- 5 grp_13           1
- 6 grp_14           1
- 7 grp_15           2
- 8 grp_16           0
- 9 grp_17           5
-10 grp_18           3
-# ℹ 14 more rows</code></pre>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: right;">Missed_Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">grp_1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_11</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_13</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_14</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_15</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_16</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_17</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_18</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_19</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_20</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_21</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_22</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_23</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_24</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_4</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_5</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_6</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_7</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_8</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_9</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -275,6 +348,197 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="question-13" class="level2">
 <h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: right;">missing_student</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">grp_1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_10</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_11</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_13</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_14</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_15</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_16</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_17</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_18</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_19</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_20</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_21</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_22</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_23</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_24</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_4</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_5</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_6</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_7</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grp_8</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">grp_9</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="question-14" class="level2">
+<h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 729 × 2
+      Id online_exam_na
+   &lt;dbl&gt;          &lt;int&gt;
+ 1     1              9
+ 2     2             14
+ 3     3              4
+ 4     4              0
+ 5     5             19
+ 6     6              1
+ 7     7             10
+ 8     8              3
+ 9     9              6
+10    10              3
+# ℹ 719 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="question-15" class="level2">
+<h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Grades_analysis_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can assume that there is a corelation between online missed tests and the final grade during the exam.In fact, the more online tests a student misses, the lower the grade will become (decreasing column trend)</p>
+</section>
+<section id="question-16" class="level2">
+<h2 class="anchored" data-anchor-id="question-16">Question 16</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 729 × 2
+      Id Missed
+   &lt;dbl&gt; &lt;lgl&gt; 
+ 1     1 TRUE  
+ 2     2 TRUE  
+ 3     3 TRUE  
+ 4     4 FALSE 
+ 5     5 FALSE 
+ 6     6 FALSE 
+ 7     7 TRUE  
+ 8     8 TRUE  
+ 9     9 FALSE 
+10    10 FALSE 
+# ℹ 719 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="question-17" class="level2">
+<h2 class="anchored" data-anchor-id="question-17">Question 17</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 24 × 2
+   Group  P_missed
+   &lt;chr&gt;     &lt;dbl&gt;
+ 1 grp_1      44.8
+ 2 grp_10     43.5
+ 3 grp_11     24  
+ 4 grp_12    100  
+ 5 grp_13     10.3
+ 6 grp_14     40.6
+ 7 grp_15     44.1
+ 8 grp_16     21.2
+ 9 grp_17     25.7
+10 grp_18     97.2
+# ℹ 14 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="question-18" class="level2">
+<h2 class="anchored" data-anchor-id="question-18">Question 18</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Grades_analysis_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We observe a correlation between the group’s average exam score and the percentage of students in the group who missed at least one MCQ. We find group 21 at the top of the graph, with the highest average grade as seen in the diagram question 7 and with a rather low percentage of students having missed at least one MCQ.</p>
 </section>
 
 </main>
