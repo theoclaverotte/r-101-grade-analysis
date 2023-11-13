@@ -50,11 +50,11 @@ the number of students who have not pass the Exam is `r NA_exam`.
 ```{r}
 grades_without_na<-grades %>%
   filter(!is.na(Exam))
-print(grades_without_na)
   
-ggplot(grades_without_na, aes(x = Exam)) + geom_histogram(binwidth = 0.7, fill="darkorange")
+ggplot(grades_without_na, aes(x = Exam)) + geom_histogram(binwidth = 0.7, color = "black", fill="darkorange")
 
 ```
+WE can see that we have a concentration of student in the lower grades out of 20.
 
 ## Question 5
 
@@ -72,12 +72,14 @@ print(student_by_grp)
 
 ggplot(grades, aes(x = Group, fill= Group)) + geom_bar() 
 ```
+The students are divided more or less equally between the groups. Some groups are over 30, while others are just over 20. We don't have any big differences between groups. 
 
 ## Question 7
 
 ```{r}
 ggplot(grades_without_na, aes(x = Group, y = Exam, fill = Group)) + geom_boxplot()
 ```
+We can see that not all groups have the same averages. Group 21 is clearly ahead of the other groups.
 
 ## Question 8
 
@@ -170,6 +172,9 @@ ggplot(grades_by_na_online,aes(x=NA_count,y=mean), )+
        y="Grades out of 20")
   
 ```
+We can assume that there is a corelation between online missed tests and the final grade during the exam.In fact, the more online tests a student misses, the lower the grade will become (decreasing column trend)
+
+
 ## Question 16
 ```{r}
 missed_any_grade <- df_long_format_grades %>%
@@ -207,5 +212,5 @@ Exam_missed_and_mean<-inner_join(percentage_missed_per_group,mean_by_group,by="G
        y="Average grade to the final exam")
 Exam_missed_and_mean
 ```
-
+We observe a correlation between the group's average exam score and the percentage of students in the group who missed at least one MCQ. We find group 21 at the top of the graph, with the highest average grade as seen in the diagram question 7 and with a rather low percentage of students having missed at least one MCQ. 
 
