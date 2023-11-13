@@ -155,8 +155,8 @@ online_exam_na
 
 ```{r}
 
-grades_na<-grades|>
-  rowwise()|>
+grades_na<-grades%>%
+  rowwise()%>%
   mutate(NA_count=sum(is.na(c_across(starts_with("Online")))))
   
 grades_by_na_online<-grades_na %>%
@@ -177,5 +177,18 @@ missed_any_grade <- df_long_format_grades %>%
   group_by(Id) %>%
   summarise(Missed = any(is.na(value)))
 missed_any_grade
+```
+
+## Question 17
+
+
+```{r}
+percentage_missed_per_group <- missed_any_grade %>%
+  inner_join(df_long_format_grades, by = "Id") %>%
+  group_by(Group) %>%
+  summarise(percetage_missed_by_group = mean(Missed)*100)
+
+percentage_missed_per_group
+
 ```
 
